@@ -9,6 +9,8 @@ import GradientButtonS from "./src/components/GradientButtonS";
 import { Colors } from "react-native/Libraries/NewAppScreen";
 import FirstScreen from "./src/screens/FirstScreen";
 import Login from "./src/screens/Login";
+import Register from "./src/screens/Register";
+import NavBar from "./src/components/NavBar";
 
 
 
@@ -17,10 +19,8 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   return (
-
-    //<FirstScreen></FirstScreen>
-    <Login></Login>
-
+    
+    <Register></Register>
   )
 }
 

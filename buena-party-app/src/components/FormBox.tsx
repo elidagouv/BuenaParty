@@ -19,7 +19,7 @@ interface FormBoxProps {
         formBoxBorder?: ViewStyle;
     };
     placeholder: string;
-    children: ReactNode;
+    children?: ReactNode;
     iconSource: { uri: string } | number;
 }
 
