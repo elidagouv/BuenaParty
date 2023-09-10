@@ -11,6 +11,7 @@ import FirstScreen from "./src/screens/FirstScreen";
 import Login from "./src/screens/Login";
 import Register from "./src/screens/Register";
 import NavBar from "./src/components/NavBar";
+import EditAccount from "./src/screens/EditAccount";
 
 
 
@@ -19,8 +20,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   return (
-    
-    <Register></Register>
+    <EditAccount></EditAccount>
   )
 }
 
