@@ -4,7 +4,8 @@ import {
     StyleSheet,
     ViewStyle,
     TouchableOpacity,
-    GestureResponderEvent
+    GestureResponderEvent,
+    
 } from 'react-native';
 import styles from '../../assets/styles/styles';
 
@@ -13,15 +14,17 @@ interface GradientButtonLProps {
     style?: ViewStyle;
     children?: ReactNode;
     onPress: any /*(event: GestureResponderEvent) => void*/;
+   
 }
 
-const GradientButtonL: React.FC<GradientButtonLProps> = ({ colors, style, children, onPress }) => {
+const GradientButtonL: React.FC<GradientButtonLProps> = ({ colors, style, children, onPress}) => {
     return (
         <TouchableOpacity onPress={onPress}>
             <LinearGradient 
                 colors={["#A12577", "#42286C"]}
                 style={[styles.gradientButtonL, style]}
             >
+                
                 {children}
             </LinearGradient>
         </TouchableOpacity>

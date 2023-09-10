@@ -114,7 +114,8 @@ const styles = StyleSheet.create ({
         resizeMode: 'stretch',
         alignItems: 'center',
         margin: 15,
-    }
+    },
+    
 });
 
 export default styles;
