@@ -24,7 +24,8 @@ const styles = StyleSheet.create ({
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+        
     },
     gradientButtonMText: {
         fontFamily: 'strong',
@@ -108,9 +109,8 @@ const styles = StyleSheet.create ({
     },
 
     imageFormBox: {
-        color: "#D3D3D3",
-        height: 25,
-        width: 25,
+        height: 30,
+        width: 30,
         resizeMode: 'stretch',
         alignItems: 'center',
         margin: 15,
