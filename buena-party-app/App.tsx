@@ -25,7 +25,17 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   return (
+    //<CreateEvent></CreateEvent>
+    //<EditAccount></EditAccount>
+    //<EditEvent></EditEvent>
+    //<FirstScreen></FirstScreen>
+    //<Login></Login>
+    //<ManageEvent></ManageEvent>
+    //<MyAccount></MyAccount>
+    //<Register></Register>
     <></>
+
+
     
   )
 }
