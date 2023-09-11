@@ -19,12 +19,13 @@ import EditEvent from "./src/screens/EditEvent";
 
 
 
+
 const Stack = createNativeStackNavigator();
 
 const App = () => {
 
   return (
-    <EditEvent></EditEvent>
+    <></>
     
   )
 }

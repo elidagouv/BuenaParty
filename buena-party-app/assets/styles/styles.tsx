@@ -121,7 +121,8 @@ const styles = StyleSheet.create({
     boxImage: {
         flexDirection: 'row',
         justifyContent: 'center',
-        position: 'relative'
+        position: 'relative',
+       
 
     },
     back: {
@@ -134,6 +135,19 @@ const styles = StyleSheet.create({
         bottom:43 
 
     },
+
+    //NAV BAR2
+    boxImage2:{
+        flexDirection: 'row-reverse',
+        justifyContent: 'center',
+        position: 'relative',
+        
+    },
+    profile:{
+        left:160 ,
+        top:30
+    },
+    
 
 });
 
