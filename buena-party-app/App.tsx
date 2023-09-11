@@ -12,6 +12,8 @@ import Login from "./src/screens/Login";
 import Register from "./src/screens/Register";
 import NavBar from "./src/components/NavBar";
 import EditAccount from "./src/screens/EditAccount";
+import MyAccount from "./src/screens/MyAccount";
+import CreateEvent from "./src/screens/CreateEvent";
 
 
 
@@ -20,7 +22,7 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   return (
-    <EditAccount></EditAccount>
+    <CreateEvent></CreateEvent>
   )
 }
 
