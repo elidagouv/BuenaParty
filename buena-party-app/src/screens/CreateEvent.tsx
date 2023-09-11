@@ -7,13 +7,17 @@ import NavBar from '../components/NavBar';
 import FormBox from '../components/FormBox';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
+type CreateEventProps = {
+    navigation: StackNavigationProp<any>;
+};
 
-const CreateEvent = () => {
+const CreateEvent: React.FC<CreateEventProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('Home Screen')}/>
                
                 <Text style={style.text}>Criar Evento</Text>
                 <View style={style.form}>

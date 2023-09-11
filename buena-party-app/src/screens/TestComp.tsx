@@ -14,7 +14,8 @@ import GradientButtonM from '../components/GradientButtonM';
 import GradientButtonS from '../components/GradientButtonS';
 import BlackButton from '../components/BlackButton';
 import FormBox from '../components/FormBox';
-import { MaterialIcons } from '@expo/vector-icons';
+import EventBox from '../components/EventBox';
+import Countdown from '../components/Countdown';
 
 type TestCompProps = {
     navigation: StackNavigationProp<any>;
@@ -61,6 +62,14 @@ const TestComp: React.FC<TestCompProps> = ({ navigation }) => {
                     iconSource={require('../../assets/icons/address.png')}
                 >
                 </FormBox>
+                <EventBox
+                    colors={[]}
+                >
+
+                </EventBox>
+                <Countdown colors={[]}>
+
+                </Countdown>
             </SafeAreaView>
         </Background>
     );

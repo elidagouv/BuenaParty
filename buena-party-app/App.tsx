@@ -16,24 +16,101 @@ import MyAccount from "./src/screens/MyAccount";
 import CreateEvent from "./src/screens/CreateEvent";
 import ManageEvent from "./src/screens/ManageEvent";
 import EditEvent from "./src/screens/EditEvent";
-
-
-
+import HomeScreen from "./src/screens/HomeScreen";
+import HomeScreen2 from "./src/screens/HomeScreen2";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
 
   return (
-    //<CreateEvent></CreateEvent>
-    //<EditAccount></EditAccount>
-    //<EditEvent></EditEvent>
-    //<FirstScreen></FirstScreen>
-    //<Login></Login>
-    //<ManageEvent></ManageEvent>
-    //<MyAccount></MyAccount>
-    //<Register></Register>
-    <></>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen 
+            name="FirstScreen"
+            component={FirstScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Register"
+            component={Register}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Create Event"
+            component={CreateEvent}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Edit Account"
+            component={EditAccount}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Edit Event"
+            component={EditEvent}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Manage Event"
+            component={ManageEvent}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="My Account"
+            component={MyAccount}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Home Screen"
+            component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Home Screen 2"
+            component={HomeScreen2}
+            options={{
+              headerShown: false,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
+
+
+    /*<CreateEvent></CreateEvent>
+    <EditAccount></EditAccount>
+    <EditEvent></EditEvent>
+    <FirstScreen></FirstScreen>
+    <Login></Login>
+    <ManageEvent></ManageEvent>
+    <MyAccount></MyAccount>
+    <Register></Register>
+    <></>*/
 
 
     

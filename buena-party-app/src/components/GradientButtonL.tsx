@@ -13,7 +13,7 @@ interface GradientButtonLProps {
     colors: string[];
     style?: ViewStyle;
     children?: ReactNode;
-    onPress: any /*(event: GestureResponderEvent) => void*/;
+    onPress: (event: GestureResponderEvent) => void;
    
 }
 

@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     gradientButtonLText: {
-        fontFamily: 'strong',
+        fontFamily: 'Strong',
         fontSize: 24,
         fontWeight: 'bold',
         color: '#FFFFFF'
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 
     },
     gradientButtonMText: {
-        fontFamily: 'strong',
+        fontFamily: 'Strong',
         fontSize: 22,
         fontWeight: 'bold',
         color: '#FFFFFF'
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     gradientButtonSText: {
-        fontFamily: 'strong',
-        fontSize: 18,
+        fontFamily: 'Strong',
+        fontSize: 16,
         fontWeight: 'bold',
         color: '#FFFFFF'
     },
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         height: 65,
         borderRadius: 13,
         backgroundColor: '#000000',
-        fontFamily: 'strong',
+        fontFamily: 'Strong',
         fontSize: 24,
         fontWeight: 'bold',
     },
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         color: '#D3D3D3',
         width: '75%',
         fontSize: 22,
-        fontFamily: 'strong'
+        fontFamily: 'Strong'
     },
 
     imageFormBox: {
@@ -148,7 +148,74 @@ const styles = StyleSheet.create({
         top:30
     },
     
+    //EVENT BOX
+    eventBoxBorder: {
+        height: 180,
+        width: 340,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    eventBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFFFFF',
+        height: 175,
+        width: 335,
+        borderRadius: 15,
+        margin: 10,
+    },
+    eventBoxTitle: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    eventBoxText: {
+        fontSize: 30,
+        fontFamily: 'Strong',
+        fontWeight: 'bold',
+        marginLeft: 15,
+    },
 
+    iconEvent: {
+        width: 30,
+        height: 30,
+        marginRight: 15,
+    },
+
+    countdownBoxBorder: {
+        height: 60,
+        width: 40,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+    },
+    countdownBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#D3D3D3',
+        height: 55,
+        width: 35,
+        borderRadius: 15,
+        margin: 10,
+    },
+    countdownTop: {
+        flexDirection: 'row',
+    },
+    countdown: {
+
+    },
+    countdownContainer: {
+        flexDirection: 'row',
+    },
+    countdownText: {
+        fontSize: 22,
+    },
+    countdownBottom: {
+        
+    }
 });
 
 export default styles;
