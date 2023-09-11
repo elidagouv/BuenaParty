@@ -14,6 +14,8 @@ import NavBar from "./src/components/NavBar";
 import EditAccount from "./src/screens/EditAccount";
 import MyAccount from "./src/screens/MyAccount";
 import CreateEvent from "./src/screens/CreateEvent";
+import ManageEvent from "./src/screens/ManageEvent";
+import EditEvent from "./src/screens/EditEvent";
 
 
 
@@ -22,7 +24,8 @@ const Stack = createNativeStackNavigator();
 const App = () => {
 
   return (
-    <CreateEvent></CreateEvent>
+    <EditEvent></EditEvent>
+    
   )
 }
 
