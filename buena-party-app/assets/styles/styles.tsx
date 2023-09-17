@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
-const styles = StyleSheet.create ({
-    
+const styles = StyleSheet.create({
+
     /*BOTÕES GRADIENTE*/
 
     gradientButtonL: {
@@ -24,7 +24,8 @@ const styles = StyleSheet.create ({
         borderRadius: 15,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 20
+        marginBottom: 20,
+
     },
     gradientButtonMText: {
         fontFamily: 'strong',
@@ -47,7 +48,7 @@ const styles = StyleSheet.create ({
         color: '#FFFFFF'
     },
 
-    /*BOTÕES PRETOS*/ 
+    /*BOTÕES PRETOS*/
 
     blackButtonBorder: {
         height: 70,
@@ -97,7 +98,7 @@ const styles = StyleSheet.create ({
         width: 315,
         borderRadius: 15,
         margin: 10,
-        
+
     },
 
     formBoxTextInput: {
@@ -108,13 +109,46 @@ const styles = StyleSheet.create ({
     },
 
     imageFormBox: {
-        color: "#D3D3D3",
-        height: 25,
-        width: 25,
+        height: 30,
+        width: 30,
         resizeMode: 'stretch',
         alignItems: 'center',
         margin: 15,
-    }
+    },
+
+    //NAV BAR
+
+    boxImage: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        position: 'relative',
+       
+
+    },
+    back: {
+        right: 120,
+        top:30
+    },
+    LogoBranca: {
+        width: 90,
+        height: 90,
+        bottom:43 
+
+    },
+
+    //NAV BAR2
+    boxImage2:{
+        flexDirection: 'row-reverse',
+        justifyContent: 'center',
+        position: 'relative',
+        
+    },
+    profile:{
+        left:160 ,
+        top:30
+    },
+    
+
 });
 
 export default styles;
