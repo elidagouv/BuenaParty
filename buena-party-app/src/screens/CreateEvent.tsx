@@ -13,7 +13,7 @@ const CreateEvent = () => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar style={style.navbar}/>
                
                 <Text style={style.text}>Criar Evento</Text>
                 <View style={style.form}>
@@ -40,27 +40,37 @@ const style = StyleSheet.create({
         textAlign: 'center',
         fontSize: 25,
         fontWeight: 'bold',
-        marginBottom:10
+        marginBottom: 10,
     },
     profile: {
         width: 90,
         height: 90,
-        left: 120
+        marginLeft: 'auto', // Alinha à direita para centrar na tela
+        marginRight: 'auto', // Alinha à direita para centrar na tela
     },
     container: {
-        position: 'relative',
+        flex: 1, // Usando flex para ocupar todo o espaço disponível
+        justifyContent: 'center', // Centraliza verticalmente
+        alignItems: 'center', // Centraliza horizontalmente
     },
     main: {
-        position: 'absolute',
-        top: 0,
+        flex: 1, // Usando flex para ocupar todo o espaço disponível
+        justifyContent: 'center', // Centraliza verticalmente
+        alignItems: 'center', // Centraliza horizontalmente
     },
     form: {
-        top: 20
+        marginTop: 20,
     },
     button: {
         alignItems: 'center',
         marginTop: 20,
+    },
+    navbar:{
+        position:'absolute',
+        top:0,
+       
     }
-
+    ,
 });
+
 export default CreateEvent;
