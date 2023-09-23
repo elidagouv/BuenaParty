@@ -3,10 +3,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";;
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import TestComp from "./src/screens/TestComp";
-import { Text, View } from "react-native";
-import GradientButtonM from "./src/components/GradientButtonM";
-import GradientButtonS from "./src/components/GradientButtonS";
-import { Colors } from "react-native/Libraries/NewAppScreen";
 import FirstScreen from "./src/screens/FirstScreen";
 import Login from "./src/screens/Login";
 import Register from "./src/screens/Register";
@@ -18,6 +14,11 @@ import ManageEvent from "./src/screens/ManageEvent";
 import EditEvent from "./src/screens/EditEvent";
 import HomeScreen from "./src/screens/HomeScreen";
 import HomeScreen2 from "./src/screens/HomeScreen2";
+import Guests from "./src/screens/Guests";
+import InviteCodeScreen from "./src/screens/InviteCodeScreen";
+import EnterEvent from "./src/screens/EnterEvent";
+import EventInfo from "./src/screens/EventInfo";
+import EventDetails from "./src/screens/EventDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ const App = () => {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator>
+        
           <Stack.Screen 
             name="FirstScreen"
             component={FirstScreen}
@@ -97,24 +99,46 @@ const App = () => {
               headerShown: false,
             }}
           />
+          <Stack.Screen 
+            name="Guests"
+            component={Guests}
+            options={{
+            headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Invite Code"
+            component={InviteCodeScreen}
+            options={{
+            headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Enter Event"
+            component={EnterEvent}
+            options={{
+            headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Event Info"
+            component={EventInfo}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
+            name="Event Details"
+            component={EventDetails}
+            options={{
+              headerShown: false,
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
-
-
-    /*<CreateEvent></CreateEvent>
-    <EditAccount></EditAccount>
-    <EditEvent></EditEvent>
-    <FirstScreen></FirstScreen>
-    <Login></Login>
-    <ManageEvent></ManageEvent>
-    <MyAccount></MyAccount>
-    <Register></Register>
-    <></>*/
-
-
     
-  )
-}
+  );
+};
 
 export default App;

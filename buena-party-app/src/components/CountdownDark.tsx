@@ -11,13 +11,13 @@ import styles from '../../assets/styles/styles';
 import GradientText from './GradientText';
 import Images from './Images';
 
-interface CountdownProps {
+interface CountdownDarkProps {
   colors: string[];
   style?: ViewStyle;
   children?: ReactNode;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
+const CountdownDark: React.FC<CountdownDarkProps> = ({ colors, style, children }) => {
   return (
     <View style={styles.countdownContainer}>
         <View style={styles.countdown}>
@@ -26,7 +26,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -34,7 +34,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -52,7 +52,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -60,7 +60,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -78,7 +78,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -86,7 +86,7 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
                     colors={["#A12577", "#42286C"]}
                     style={styles.countdownBoxBorder}
                 >
-                    <View style={styles.countdownBox}>
+                    <View style={styles.countdownBoxDark}>
                         
                     </View>
                 </LinearGradient>
@@ -105,4 +105,4 @@ const Countdown: React.FC<CountdownProps> = ({ colors, style, children }) => {
   );
 };
 
-export default Countdown;
+export default CountdownDark;

@@ -16,6 +16,7 @@ import BlackButton from '../components/BlackButton';
 import FormBox from '../components/FormBox';
 import EventBox from '../components/EventBox';
 import Countdown from '../components/Countdown';
+import InviteCode from '../components/InviteCode';
 
 type TestCompProps = {
     navigation: StackNavigationProp<any>;
@@ -62,14 +63,7 @@ const TestComp: React.FC<TestCompProps> = ({ navigation }) => {
                     iconSource={require('../../assets/icons/address.png')}
                 >
                 </FormBox>
-                <EventBox
-                    colors={[]}
-                >
-
-                </EventBox>
-                <Countdown colors={[]}>
-
-                </Countdown>
+                <InviteCode />
             </SafeAreaView>
         </Background>
     );

@@ -158,15 +158,16 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     eventBox: {
-        flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#FFFFFF',
         height: 175,
         width: 335,
         borderRadius: 15,
         margin: 10,
+        justifyContent: 'space-evenly',
     },
     eventBoxTitle: {
+        top: 5,
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
@@ -177,13 +178,39 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 15,
     },
-
+    eventBoxDark: {
+        alignItems: 'center',
+        backgroundColor: "rgba(255,255,255,0.12)",
+        height: 150,
+        width: 350,
+        borderRadius: 15,
+        margin: 10,
+        justifyContent: 'space-evenly',
+    },
+    eventBoxTitleDark: {
+        top: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-end',
+        width: '100%',
+        height: '10%',
+    },
+    eventBoxTextDark: {
+        fontSize: 30,
+        fontFamily: 'Strong',
+        fontWeight: 'bold',
+        marginLeft: 15,
+    },
     iconEvent: {
         width: 30,
         height: 30,
         marginRight: 15,
     },
-
+    iconEventDark: {
+        width: 25,
+        height: 25,
+        marginRight: 15,
+    },
     countdownBoxBorder: {
         height: 60,
         width: 40,
@@ -191,6 +218,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 10,
+        margin: 5,
     },
     countdownBox: {
         flexDirection: 'row',
@@ -199,23 +227,123 @@ const styles = StyleSheet.create({
         height: 55,
         width: 35,
         borderRadius: 15,
-        margin: 10,
+    },
+    countdownBoxDark: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#131313',
+        height: 55,
+        width: 35,
+        borderRadius: 15,
     },
     countdownTop: {
         flexDirection: 'row',
+        justifyContent: 'space-evenly',
     },
     countdown: {
-
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
     },
     countdownContainer: {
         flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        backgroundColor: 'transparent',
+        borderRadius: 15,
+        margin: 10,
     },
     countdownText: {
         fontSize: 22,
+        fontWeight: 'bold',
     },
     countdownBottom: {
-        
-    }
+
+    },
+    divider: {
+        fontSize: 40,
+        bottom: 18,
+    },
+
+    // INVITE CODE
+
+    codeContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        borderRadius: 15,
+    },
+    codeSide: {
+        flexDirection: 'row',
+    },
+    codeDivider: {
+        fontSize: 40,
+    },
+    codeBorderBox: {
+        height: 60,
+        width: 40,
+        borderRadius: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 1,
+    },
+    codeBox: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#151515',
+        height: 55,
+        width: 35,
+        borderRadius: 15,
+    },
+    imageCode: {
+        height: 20,
+        width: 20,
+        marginRight: 4,
+        marginLeft: 4
+    },
+    textCode: {
+        fontFamily: 'Strong',
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#FFFFFF'
+    },
+
+    //GUESTS BOX
+
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
+      background: {
+        borderRadius: 15,
+        width: 320,
+      },
+      header: {
+        margin: 2,
+        padding: 22,
+        backgroundColor: '#FFFFFF',
+        borderRadius: 15,
+      },
+      headerExpanded: {
+        margin: 2,
+        padding: 10,
+        backgroundColor: '#D3D3D3',
+        borderRadius: 15,
+        width: 316,
+      },
+      headerText: {
+        fontSize: 20,
+        width: '100%',
+      },
+      content: {
+        backgroundColor: '#FFFFFF',
+        borderRadius: 15,
+        margin: 2,
+      },
+      headerTextExpanded: {
+        fontSize: 20,
+        width: '100%',
+        color: '#FFFFFF',
+      },
 });
 
 export default styles;

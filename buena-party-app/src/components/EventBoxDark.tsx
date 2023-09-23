@@ -9,9 +9,9 @@ import {
 import styles from '../../assets/styles/styles';
 import GradientText from './GradientText';
 import Images from './Images';
-import Countdown from './Countdown';
+import CountdownDark from './CountdownDark';
 
-interface EventBoxProps {
+interface EventBoxDarkProps {
   colors: string[];
   style?: ViewStyle;
   children?: ReactNode;
@@ -19,28 +19,22 @@ interface EventBoxProps {
   onPress: (event: GestureResponderEvent) => void;
 }
 
-const EventBox: React.FC<EventBoxProps> = ({ colors, style, children, iconSource, onPress }) => {
+const EventBoxDark: React.FC<EventBoxDarkProps> = ({ colors, style, children, iconSource, onPress }) => {
   return (
-    <LinearGradient
-        colors={["#A12577", "#42286C"]}
-        style={styles.eventBoxBorder}
-    >
-        <View style={styles.eventBox}>
-            <View style={styles.eventBoxTitle}>
-                <GradientText style={styles.eventBoxText}>
-                    {children}
-                </GradientText>
+    
+        <View style={styles.eventBoxDark}>
+            <View style={styles.eventBoxTitleDark}>
+                
                 <TouchableOpacity onPress={onPress}>
                   <Images
-                      style={styles.iconEvent}   
+                      style={styles.iconEventDark}   
                       iconSource={iconSource} 
                   />
                 </TouchableOpacity>
             </View>
-            <Countdown colors={[]}></Countdown>
+            <CountdownDark colors={[]}></CountdownDark>
         </View>
-    </LinearGradient>
   );
 };
 
-export default EventBox;
+export default EventBoxDark;
