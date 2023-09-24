@@ -9,7 +9,7 @@ interface LogoProps {
    iconSource: { uri: string } | number;
 }
 
-const Images: React.FC<LogoProps> = ({style,iconSource}) => {
+const Images: React.FC<LogoProps> = ({style, iconSource}) => {
     return (
         <Image style={[style]} source={iconSource}/>
     );

@@ -7,13 +7,17 @@ import NavBar from '../components/NavBar';
 import FormBox from '../components/FormBox';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
+type EditEventProps = {
+    navigation: StackNavigationProp<any>;
+};
 
-const EditEvent = () => {
+const EditEvent: React.FC<EditEventProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('Manage Event')}/>
                
                 <Text style={style.text}>Editar Evento</Text>
                 <View style={style.form}>

@@ -7,13 +7,17 @@ import NavBar from '../components/NavBar';
 import FormBox from '../components/FormBox';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
+type EditAccountProps = {
+    navigation: StackNavigationProp<any>;
+};
 
-const EditAccount = () => {
+const EditAccount: React.FC<EditAccountProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('My Account')} />
                
                 <TouchableOpacity>
                     <Images style={style.profile} iconSource={require('../../assets/icons/perfil.png')} />
@@ -26,7 +30,7 @@ const EditAccount = () => {
                     <FormBox colors={[]} placeholder='Confirmar Senha' iconSource={require('../../assets/icons/password.png')} />
 
                     <View style={style.button}>
-                        <GradientButtonM onPress={[]} colors={[]}>
+                        <GradientButtonM onPress={() => navigation.navigate('My Account')} colors={[]}>
                             <Text style={styles.gradientButtonMText}>Confirmar</Text>
                         </GradientButtonM>
                     </View>

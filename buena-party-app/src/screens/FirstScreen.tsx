@@ -4,9 +4,13 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import Logo from '../components/Images';
 import { StyleSheet, Text, View } from 'react-native';
 import GradientButtonL from '../components/GradientButtonL';
+import { StackNavigationProp } from '@react-navigation/stack';
 
+type FirstScreenProps = {
+    navigation: StackNavigationProp<any>;
+};
 
-const FirstScreen = () => {
+const FirstScreen: React.FC<FirstScreenProps> = ({ navigation }) => {
 
     return (
 
@@ -14,10 +18,10 @@ const FirstScreen = () => {
         <Background colors={["#070624", "#000000", "#070624"]}>
             <SafeAreaView>
                 <Logo style={styles.Logo} iconSource={require('../../assets/icons/LogoGradiente.png')}/>
-                <GradientButtonL colors={[]} onPress={[]} >
+                <GradientButtonL colors={[]} onPress={() => navigation.navigate('Login')} >
                     <Text style={styles.text}>Entrar</Text>
                 </GradientButtonL>
-                <GradientButtonL colors={[]} onPress={[]}>
+                <GradientButtonL colors={[]} onPress={() => navigation.navigate('Register')}>
                     <Text style={styles.text}>Cadastrar</Text>
                 </GradientButtonL>
             </SafeAreaView>
