@@ -6,19 +6,23 @@ import { Text, View, StyleSheet } from "react-native";
 import GradientButtonL from "../components/GradientButtonL";
 import BlackButton from "../components/BlackButton";
 import styles from "../../assets/styles/styles";
+import { StackNavigationProp } from "@react-navigation/stack";
 
+type ManageEventProps = {
+    navigation: StackNavigationProp<any>;
+};
 
-const ManageEvent = () => {
+const ManageEvent: React.FC<ManageEventProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('Home Screen 2')}/>
                 <Text style={style.text}>Gerenciar Evento</Text>
                 <View style={style.buttons}>
-                    <GradientButtonL onPress={[]} colors={[]} style={style.convidados}>
+                    <GradientButtonL onPress={() => navigation.navigate('Guests')} colors={[]} style={style.convidados}>
                         <Text style={styles.gradientButtonLText}>Convidados</Text>
                     </GradientButtonL>
-                    <GradientButtonL onPress={[]} colors={[]}>
+                    <GradientButtonL onPress={() => navigation.navigate('Edit Event')} colors={[]}>
                         <Text style={styles.gradientButtonLText}>Editar Informações</Text>
                     </GradientButtonL>
                     <BlackButton onPress={[]} colors={[]} style={style.blackButton}>

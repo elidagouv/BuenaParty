@@ -6,15 +6,21 @@ import FormBox from '../components/FormBox';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-const Login = () => {
+type LoginProps = {
+  navigation: StackNavigationProp<any>;
+};
+
+const Login: React.FC<LoginProps> = ({ navigation }) => {
+
   const handleForgotPassword = () => {};
 
   return (
     <Background colors={[]} style={style.background}>
       <SafeAreaView style={style.container}>
         <View style={style.boxImage}>
-          <TouchableOpacity onPress={handleForgotPassword}>
+          <TouchableOpacity onPress={() => navigation.navigate('FirstScreen')}>
             <Images
               style={style.back}
               iconSource={require('../../assets/icons/back.png')}
@@ -49,7 +55,7 @@ const Login = () => {
           </TouchableOpacity>
 
           <View style={style.button}>
-            <GradientButtonM colors={[]} onPress={[]}>
+            <GradientButtonM colors={[]} onPress={() => navigation.navigate('Home Screen')}>
               <Text style={styles.gradientButtonMText}>Entrar</Text>
             </GradientButtonM>
           </View>

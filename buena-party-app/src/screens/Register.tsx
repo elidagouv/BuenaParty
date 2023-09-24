@@ -7,13 +7,18 @@ import NavBar from '../components/NavBar';
 import FormBox from '../components/FormBox';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 
-const Register = () => {
+type RegisterProps = {
+    navigation: StackNavigationProp<any>;
+  };
+  
+  const Register: React.FC<RegisterProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('FirstScreen')} />
                 <Text style={style.text}>Bem Vindo à BUENAPARTY!</Text>
                 <TouchableOpacity>
                     <Images style={style.profile} iconSource={require('../../assets/icons/perfil.png')} />

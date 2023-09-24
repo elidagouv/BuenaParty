@@ -7,22 +7,27 @@ import GradientButtonL from '../components/GradientButtonL';
 import styles from '../../assets/styles/styles';
 import GradientButtonM from '../components/GradientButtonM';
 import BlackButton from '../components/BlackButton';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-const MyAccount = () => {
+type MyAccountProps = {
+    navigation: StackNavigationProp<any>;
+};
+
+const MyAccount: React.FC<MyAccountProps> = ({ navigation }) => {
     return (
         <Background colors={[]} style={style.container}>
             <SafeAreaView style={style.main}>
-                <NavBar />
+                <NavBar onPress={() => navigation.navigate('Home Screen')}/>
                 <Text style={style.text}>Minha Conta</Text>
                 <View style={style.boxButtons}>
-                    <GradientButtonL onPress={[]} colors={[]}>
+                    <GradientButtonL onPress={() => navigation.navigate('Edit Account')} colors={[]}>
                         <Text style={styles.gradientButtonLText}>Editar conta</Text>
                     </GradientButtonL>
                     <GradientButtonM onPress={[]} colors={[]}>
                         <Text style={styles.gradientButtonMText}>Notificações</Text>
                     </GradientButtonM>
                     <View style={style.button}>
-                        <GradientButtonM onPress={[]} colors={[]}>
+                        <GradientButtonM onPress={() => navigation.navigate('FirstScreen')} colors={[]}>
                             <Text style={styles.gradientButtonMText}>Sair</Text>
                         </GradientButtonM>
                         <BlackButton onPress={[]} colors={[]}>
