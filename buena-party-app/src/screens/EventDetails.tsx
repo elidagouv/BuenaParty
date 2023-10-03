@@ -43,7 +43,7 @@ const EventDetails: React.FC<EventDetailsProps> = ({ navigation }) => {
                             iconSource={require('../../assets/icons/hour.png')}
                         />
                     </View>
-                    <GradientButtonM 
+                    <GradientButtonM // botão para gerar qrcode
                         colors={[]} 
                         onPress={() => navigation.navigate('Event Info')}
                         style={style.button}
