@@ -51,6 +51,13 @@ const App = () => {
             }}
           />
           <Stack.Screen 
+            name="HomeScreen"
+            component={HomeScreen}
+            options={{
+              headerShown: false,
+            }}
+          />
+          <Stack.Screen 
             name="Create Event"
             component={CreateEvent}
             options={{
@@ -85,13 +92,7 @@ const App = () => {
               headerShown: false,
             }}
           />
-          <Stack.Screen 
-            name="Home Screen"
-            component={HomeScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
+          
           <Stack.Screen 
             name="Home Screen 2"
             component={HomeScreen2}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Background from '../components/Background';
 import Images from '../components/Images';
@@ -7,14 +7,54 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
 import { StackNavigationProp } from '@react-navigation/stack';
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage'; // Importe AsyncStorage
 
 type LoginProps = {
   navigation: StackNavigationProp<any>;
 };
 
 const Login: React.FC<LoginProps> = ({ navigation }) => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [error, setError] = useState('');
 
-  const handleForgotPassword = () => {};
+  useEffect(() => {
+    // Verifique se há um token armazenado localmente ao carregar a tela de login
+    checkAuthToken();
+  }, []);
+
+  const checkAuthToken = async () => {
+    // Verifique se há um token no AsyncStorage
+    const authToken = await AsyncStorage.getItem('authToken');
+    if (authToken) {
+      // Se houver um token, navegue para a tela Home diretamente
+      navigation.navigate('HomeScreen');
+    }
+  };
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:3090/login', {
+        email: email,
+        senha: senha,
+      });
+
+      if (response.status === 200) {
+        console.log(response.data);
+
+        // Armazene o token no AsyncStorage após um login bem-sucedido
+        await AsyncStorage.setItem('authToken', response.data.token);
+
+        navigation.navigate('HomeScreen');
+      }
+    } catch (error) {
+      console.error('Erro ao realizar o login: ', error);
+      setError('Erro ao fazer o login. Verifique suas credenciais.');
+      setEmail('');
+      setSenha('');
+    }
+  };
 
   return (
     <Background colors={[]} style={style.background}>
@@ -39,25 +79,28 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
             colors={[]}
             placeholder='Email'
             iconSource={require('../../assets/icons/email.png')}
-          >
-
-          </FormBox>
+            onChange={(text) => {
+              setEmail(text);
+            }}
+            value={email}
+          ></FormBox>
           <FormBox
             colors={[]}
             placeholder='Senha'
             iconSource={require('../../assets/icons/password.png')}
-          >
-            
-          </FormBox>
+            onChange={(text) => setSenha(text)}
+            value={senha}
+          ></FormBox>
 
-          <TouchableOpacity onPress={handleForgotPassword}>
+          <TouchableOpacity>
             <Text style={style.forgotPasswordText}>Esqueceu a senha?</Text>
           </TouchableOpacity>
 
           <View style={style.button}>
-            <GradientButtonM colors={[]} onPress={() => navigation.navigate('Home Screen')}>
+            <GradientButtonM colors={[]} onPress={handleLogin}>
               <Text style={styles.gradientButtonMText}>Entrar</Text>
             </GradientButtonM>
+            {error ? <Text style={style.errorText}>{error}</Text> : null}
           </View>
         </View>
       </SafeAreaView>
@@ -115,6 +158,12 @@ const style = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
+  },
+
+  errorText: {
+    color: 'red',
+    textAlign: 'center',
+    marginTop: 10,
   },
 });
 
