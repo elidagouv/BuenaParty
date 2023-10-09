@@ -45,8 +45,11 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
 
         // Armazene o token no AsyncStorage após um login bem-sucedido
         await AsyncStorage.setItem('authToken', response.data.token);
+        await AsyncStorage.setItem(`idUser`, response.data.id);
+        await AsyncStorage.setItem(`nomeUser`, response.data.nome);
 
         navigation.navigate('HomeScreen');
+
       }
     } catch (error) {
       console.error('Erro ao realizar o login: ', error);
@@ -91,11 +94,6 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
             onChange={(text) => setSenha(text)}
             value={senha}
           ></FormBox>
-
-          <TouchableOpacity>
-            <Text style={style.forgotPasswordText}>Esqueceu a senha?</Text>
-          </TouchableOpacity>
-
           <View style={style.button}>
             <GradientButtonM colors={[]} onPress={handleLogin}>
               <Text style={styles.gradientButtonMText}>Entrar</Text>

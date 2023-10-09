@@ -11,7 +11,6 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import HomeScreen from './HomeScreen';
 
 import axios from 'axios';
-import { response } from 'express';
 
 const urlAPI = 'http://localhost:3090';
 
@@ -38,13 +37,12 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
       if (response.data) {
         console.log(response.data);
 
-        navigation.navigate('HomeScreen'); // Use 'HomeScreen' em vez de 'Home Screen'
+        navigation.navigate('Login');
 
       }
 
     } catch (error) {
       console.error('Erro na requisição:', error);
-      // Trate os erros de acordo com sua lógica
     }
   };
 

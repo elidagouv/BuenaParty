@@ -9,6 +9,7 @@ import GradientButtonM from '../components/GradientButtonM';
 import styles from '../../assets/styles/styles';
 import { StackNavigationProp } from '@react-navigation/stack';
 import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type CreateEventProps = {
   navigation: StackNavigationProp<any>;
@@ -24,30 +25,35 @@ const CreateEvent: React.FC<CreateEventProps> = ({ navigation }) => {
 
   const handleSubmit = async () => {
     try {
-        const response = await axios.post('http://localhost:3090/registrar-evento', {
-          nome: nome,
-          data: data,
-          hora: horario,
-          local: local,
-        });
+      const userId = await AsyncStorage.getItem('idUser'); // Obtenha o userId do AsyncStorage
+  
+      console.log(userId);
 
-        if (response.status === 201) {
-            setMensagem('Evento criado com sucesso!');
-            setNome('');
-            setLocal('');
-            setHorario('');
-            setData('');
-
-            setTimeout(() => {
-                navigation.navigate('HomeScreen');
-              }, 3000);
-        }
-
+      const response = await axios.post(`http://localhost:3090/registrar-evento`, {
+        nome: nome,
+        data: data,
+        hora: horario,
+        local: local,
+        criado_por: userId
+      });
+  
+      if (response.status === 201) {
+        setMensagem('Evento criado com sucesso!');
+        setNome('');
+        setLocal('');
+        setHorario('');
+        setData('');
+  
+        setTimeout(() => {
+          navigation.navigate('HomeScreen');
+        }, 3000);
+      }
     } catch (error) {
-        console.error('Erro ao registrar o evento:', error);
-        setMensagem('Erro ao registrar o evento. Verifique os campos preenchidos!')
-    };
-}
+      console.error('Erro ao registrar o evento:', error);
+      setMensagem('Erro ao registrar o evento. Verifique os campos preenchidos!');
+    }
+  };
+  
   return (
     <Background colors={[]} style={style.container}>
       <SafeAreaView style={style.main}>
@@ -125,7 +131,7 @@ const style = StyleSheet.create({
     marginTop: 20,
   },
   mensagem: {
-    color: 'red',
+    color: 'green',
     marginTop: 10,
   },
 });
