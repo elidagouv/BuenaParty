@@ -86,7 +86,6 @@ app.post('/register/user', async (req, res) => {
       return res.status(400).json({ error: 'Este e-mail já está cadastrado!' });
     }
 
-    //Registro do usuário
     await db.promise().query('INSERT INTO USUARIO (nome, senha, e_mail, telefone) VALUES (?, ?, ?, ?)', [
       nome,
       senha,
@@ -101,14 +100,14 @@ app.post('/register/user', async (req, res) => {
   }
 });
 
-//EndPoint para registrar o evento baseado no usuário
-app.get('/register/events/:userId', (req, res) => {
-  const userId = req.params.userId;
+//EndPoint para ver os eventos baseado no usuário
+app.get('/register/events/:Id', (req, res) => {
+  const Id = req.params.userId;
 
   //Vai ter que criar esse usuario_id no banco na tabela evento para relacionar o user com o evento
-  const query = 'SELECT * FROM EVENTO WHERE usuario_id = ?';
+  const query = 'SELECT * FROM EVENTO WHERE criado_por = 1';
 
-  db.query(query, [userId], (err, result) => {
+  db.query(query, [Id], (err, result) => {
     if (err) {
       console.error('Erro na consulta SQL: ' + err.stack);
       res.status(500).json({ error: 'Erro no servidor' });
@@ -174,13 +173,13 @@ app.post('/login', async (req, res) => {
 //EndPoint para atualizar os dados do usuário
 app.put('/update/user/:id', async (req, res) => {
   const userId = req.params.id;
-  const { nome, email, telefone, senha } = req.body;
+  const { nome, e_mail, telefone, senha } = req.body;
 
   try {
     // Exemplo de consulta SQL para atualizar o usuário
-    await db.promise().query('UPDATE USUARIO SET nome = ?, email = ?, telefone = ?, senha = ? WHERE id = ?', [
+    await db.promise().query('UPDATE USUARIO SET nome = ?, e_mail = ?, telefone = ?, senha = ? WHERE id = ?', [
       nome,
-      email,
+      e_mail,
       telefone,
       senha,
       userId

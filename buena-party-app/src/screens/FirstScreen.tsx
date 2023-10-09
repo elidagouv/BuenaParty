@@ -47,7 +47,7 @@ const FirstScreen: React.FC<FirstScreenProps> = ({ navigation }) => {
         </GradientButtonL>
         {logoutButtonVisible && (
           <TouchableOpacity onPress={handleLogout}>
-            <Text style={styles.logoutText}>Sair</Text>
+            <Text style={styles.text}>Sair</Text>
           </TouchableOpacity>
         )}
       </SafeAreaView>

@@ -48,7 +48,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
               <Text style={styles.gradientButtonLText}>Criar Evento</Text>
             </GradientButtonL>
             <GradientButtonL colors={[]} style={styles.gradientButtonL} onPress={() => navigation.navigate('Home Screen 2')}>
-              <Text style={styles.gradientButtonLText}>Entrar em evento</Text>
+              <Text style={styles.gradientButtonLText}>Ver eventos</Text>
             </GradientButtonL>
             <GradientButtonL colors={[]} style={styles.gradientButtonL} onPress={() => navigation.navigate('Edit Account')}>
               <Text style={styles.gradientButtonLText}>Editar Conta</Text>
