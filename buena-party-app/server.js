@@ -173,13 +173,13 @@ app.post('/login', async (req, res) => {
 //EndPoint para atualizar os dados do usuário
 app.put('/update/user/:id', async (req, res) => {
   const userId = req.params.id;
-  const { nome, e_mail, telefone, senha } = req.body;
+  const { nome, email, telefone, senha } = req.body;
 
   try {
     // Exemplo de consulta SQL para atualizar o usuário
     await db.promise().query('UPDATE USUARIO SET nome = ?, e_mail = ?, telefone = ?, senha = ? WHERE id = ?', [
       nome,
-      e_mail,
+      email,
       telefone,
       senha,
       userId
@@ -191,7 +191,6 @@ app.put('/update/user/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro ao atualizar o usuário' });
   }
 });
-
 
 //registra o evento
 app.post('/registrar-evento/', (req, response) => {
@@ -215,8 +214,6 @@ app.post('/registrar-evento/', (req, response) => {
 
   });
 });
-
-
 
 // Servidor Express
 app.listen(port, () => {
